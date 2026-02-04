@@ -1,0 +1,142 @@
+docs/Aether_# AETHER RENAISSANCE — MASTER CONTEXT FILE
+**Version:** 2.0 (Complete Lore & Roster Lock)
+**Use Case:** Context injection for AI generation (Code, Art, Text, Balance).
+
+---
+
+## 1. PROJECT IDENTITY & PHILOSOPHY
+**Genre:** Competitive RTS (Starcraft/Warcraft 3 hybrid).
+**Setting:** **Aetherpunk / Clockwork Fantasy**.
+* **KEY VISUAL RULE:** No "Magic" in the traditional sense. Everything is technology: gears, steam, optics, biology, or cosmic energy.
+* **Philosophy:** "Decisions > Reactions". Macro-oriented. High lethality, clear counters.
+* **Esports Naming Convention:** All units have 1-2 syllable "Callout Names" for fast commentary (e.g., "Volt" instead of "Volt-Arbalest").
+
+---
+
+## 2. FACTION ROSTERS (SYMMETRIC 12-SLOT SYSTEM)
+
+### FACTION 1: GOLDEN CONCORDAT (The Order)
+* **Archetype:** Humans/Alliance. Versatility, Defense, Technology.
+* **Aesthetic:** Italian Renaissance, Da Vinci blueprints, White Marble, Gold, Electricity.
+* **Unique Mechanic:** **Emergency Protocol**. Workers can equip weapons/shields to become militia.
+* **Resource Mechanic:** **Masonry**. Buildings can be upgraded/armored.
+
+| Role | **Callout Name** | Full Description / Visual |
+| :--- | :--- | :--- |
+| **Worker** | **Servo** | (Factotum) Clockwork assistant. Builds & repairs. |
+| **T1 Ranged** | **Volt** | (Volt-Arbalest) Crossbowman with electric bolts. Bonus dmg when holding ground. |
+| **T1 Tank** | **Guard** | (Pavisier) Heavy infantry with energy tower-shield. Blocks first hit. |
+| **T2 Caster** | **Vector** | (Geometer) Combat mathematician. Buffs speed, calculates trajectories. |
+| **T2 Healer** | **Saint** | (Hierophant) Medic with nano-repair nanites. Disspels debuffs. |
+| **T2 Mech** | **Lancer** | (Ferro-Strider) Mechanical horse/walker. Fast cavalry, jumps over small units. |
+| **T2 Siege** | **Prism** | (Sol-Bombard) Lens-cannon. Fires a beam of light (Friendly Fire active!). |
+| **T2 Air** | **Jet** | (Sky-Lancer) Light jetpack interceptor. Anti-air specialist. |
+| **T3 Elite** | **Judge** | (Justicar) Heavy mech-paladin with a gravity hammer. |
+| **T3 Heavy Air**| **Hawk** | (Ornithopter) Armored bomber/transport. Da Vinci style wings. |
+| **Utility** | **Spy** | (Clockwork Scout) Invisible mechanical spider. Detector. |
+| **Special** | **Sentry** | (Aether-Tower) Mobile defensive structure. Can deploy into a turret. |
+
+---
+
+### FACTION 2: FERRUM (The Industry)
+* **Archetype:** Orcs/Industrial. Brute Force, Durability, Heat.
+* **Aesthetic:** Dieselpunk, Rust, Smoke, Fire, Heavy Casting.
+* **Unique Mechanic:** **Overheat**. Units can sacrifice HP to temporarily boost Attack Speed.
+* **Resource Mechanic:** **Scavenge**. Gain resources when dealing damage to enemy buildings.
+
+| Role | **Callout Name** | Full Description / Visual |
+| :--- | :--- | :--- |
+| **Worker** | **Welder** | (Slag-Walker) Exoskeleton welder. Slow but tough. |
+| **T1 Melee** | **Maul** | (Breaker) Heavy diver suit with a hydraulic hammer. Tanky meatshield. |
+| **T1 Ranged** | **Rivet** | (Riveter) Fires red-hot rivets. Short range, high burst. |
+| **T2 Caster** | **Smog** | (Smog-Weaver) Creates smoke screens (enemy miss chance). |
+| **T2 Buffer** | **Pyro** | (Igniter) Sets allies on fire (buff) or enemies (DoT). |
+| **T2 Tank** | **Kiln** | (Furnace-Walker) Walking furnace. AoE heat damage aura. |
+| **T2 Siege** | **Train** | (Juggernaut) Massive siege ram on legs. Destroys walls. |
+| **T2 Air** | **Gyro** | (Gyro-Cutter) Helicopter with buzzsaws. Melee air unit. |
+| **T3 Elite** | **Clad** | (Ironclad) Super-heavy golem. Magic immunity. |
+| **T3 Heavy Air**| **Baron** | (Zeppelin) Flying fortress/factory. Produces free suicide drones. |
+| **Utility** | **Mule** | (Scrap-Mule) Mobile storage. Collects scrap from dead mechs for cash. |
+| **Special** | **Boom** | (Sapper) Suicide unit with explosives. |
+
+---
+
+### FACTION 3: THE VIRIDIAN COIL (The Growth)
+* **Archetype:** Night Elves/Zerg. Swarm, Stealth, Regeneration.
+* **Aesthetic:** Biopunk. Wood fused with Brass. Vines turning into gears.
+* **Unique Mechanic:** **Symbiotic Growth**. Workers transform into buildings (Wisp style: cancel returns the unit).
+* **Resource Mechanic:** **Overgrowth**. Buildings spread "Forest" terrain (Regen + Stealth for allies).
+
+| Role | **Callout Name** | Full Description / Visual |
+| :--- | :--- | :--- |
+| **Worker** | **Germ** | (Sprout) Bio-drone. Merges with ground to grow buildings. |
+| **T1 Melee** | **Lash** | (Sapling) Vine-lasher. Cheap swarm unit. |
+| **T1 Ranged** | **Thorn** | (Needle-Fusilier) Shoots organic needles. Invisible in Forest. |
+| **T2 Caster** | **Spore** | (Mutator) Casts corrosion/poison clouds. |
+| **T2 Healer** | **Sage** | (Druid) Heals buildings and units. Roots enemies. |
+| **T2 Tank** | **Bark** | (Root-Hulk) Animated stump/cyborg. Can root self to super-regen. |
+| **T2 Siege** | **Pod** | (Acid-Mortar) Living mortar. Fires acid blobs that melt armor. |
+| **T2 Air** | **Wasp** | (Wasp-Rider) Very fast, fragile anti-air flyer. |
+| **T3 Elite** | **Titan** | (Ancient) Massive bio-mech tree. Cleave attack. |
+| **T3 Heavy Air**| **Moth** | (Dirigible) Giant bio-blimp. Carpet bombing with spores. |
+| **Utility** | **Mimic** | Can disguise itself as a tree or gold mine. |
+| **Special** | **Seed** | (Launcher) Bio-transport. Launches units across the map. |
+
+---
+
+### FACTION 4: THE ENTROPY (The Void)
+* **Archetype:** Undead/Protoss. Shields, Summons, Glass Cannons.
+* **Aesthetic:** Cosmic Horror, Glitch Art, Black Metal, Anti-Matter, Non-Euclidean.
+* **Unique Mechanic:** **The Rift**. Buildings must be summoned on Cursed Ground.
+* **Resource Mechanic:** **Sacrifice**. Kill own unit to gain instant Mana/Resources.
+
+| Role | **Callout Name** | Full Description / Visual |
+| :--- | :--- | :--- |
+| **Worker** | **Null** | (Nihilist) Cultist. Summons buildings from the void. |
+| **T1 Melee** | **Husk** | (Hollow) Empty armor/automaton. Teleports short distances (Blink). |
+| **T1 Ranged** | **Flux** | (Void-Weaver) Multi-armed shooter. Anti-matter shots (slows). |
+| **T2 Caster** | **Glitch** | (Discordant) Causes enemies to miss/stutter. Silence. |
+| **T2 Summoner**| **Echo** | (Resonator) Raises temporary "Ghosts" from scrap/corpses. |
+| **T2 Tank** | **Maw** | (Matter-Eater) Gravity anomaly. Pulls enemies in (Hook). |
+| **T2 Siege** | **Doom** | (Cataclysm) Catapult. Fires rifts that damage over time. |
+| **T2 Air** | **Ray** | (Prism-Drone) Focus laser. Damage increases over time on single target. |
+| **T3 Elite** | **Lich** | (Avatar) Floating shield-generator. High DPS, low HP, huge Shield. |
+| **T3 Heavy Air**| **Omen** | (Eclipse) Black Sun. Freezes enemy buildings (Stasis). |
+| **Utility** | **Eye** | (Observer) Invisible flying detector. |
+| **Special** | **Gate** | (Phase-Gate) Deploys into a teleport tunnel entrance. |
+
+---
+
+## 3. CORE TECHNICAL RULES (FROM TDD v1.5.1)
+
+### Economy
+* **Solaris:** Main resource (Gold).
+* **Quartz:** Tech resource (Wood/Gas). Required for T2/T3 and **Overcharge**.
+* **Overcharge:** Ability to speed up a building by spending Quartz.
+    * *Constraint:* Cannot bank the buff. Timer ticks even if production is paused.
+
+### Physics & Movement
+* **No Push:** Units do not push each other physically.
+* **Smart Yield:** Idle units step aside for moving units (Vector calculation: Center-to-Center).
+* **Anti-Stall:** Sudden Death triggers if Player has 0 Buildings AND 0 Active Construction Sites (must be building for S seconds).
+
+### Damage Types (RPS)
+* **Kinetic** > Light Armor (Workers, T1 Ranged).
+* **Aether** > Medium Armor (T1 Melee, Casters).
+* **Armor-Piercing** > Heavy Armor (Mechs, Tanks).
+* **Siege** > Fortified (Buildings). *Has Friendly Fire.*
+
+---
+
+## 4. CONTEXT FOR AI GENERATION (META-INSTRUCTIONS)
+
+* **When generating Code:** Use the Callout Names for class names (e.g., `Unit_Servo`, `Unit_Glitch`) but include the full descriptive name in comments. Adhere strictly to the interfaces defined in TDD v1.5.1.
+* **When generating Art/Visuals:** Strictly avoid "High Fantasy" tropes. No wizards with wooden staffs (unless it's a cyborg-druid). No dragons (unless it's a robot). Focus on materials: Brass, Rust, Wood, Void.
+* **When generating Voice Lines:**
+    * *Concordat:* Disciplined, Latin-sounding, Military radio filter.
+    * *Ferrum:* Grunting, loud machinery noise, shouting over engine roar.
+    * *Coil:* Whispering, hive-mind distortion, squishing sounds.
+    * *Entropy:* Reverse reverb, metallic scraping, glitchy/static voice.
+
+---
+**END OF MASTER FILE**Renaissance_Master_Context_v2.txt
