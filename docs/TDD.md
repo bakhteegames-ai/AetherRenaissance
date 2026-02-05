@@ -1,21 +1,46 @@
-# Aether Renaissance - Technical Design Document
-**Version:** 1.5.1
-**Last Updated:** January 2025
-**Project:** Real-Time Strategy Game
+# Aether Renaissance - Technical Design Document (Phase 0)
+
+**Version:** 2.0 - Phase 0 Vertical Slice  
+**Last Updated:** February 5, 2026  
+**Project:** Unity RTS Prototype - Aetherpunk Theme  
+**Status:** 🚧 Early Development - Phase 0
+
+---
+
+## ⚠️ CRITICAL: Phase 0 Scope Restrictions
+
+This document describes **ONLY Phase 0** - the minimal vertical slice.
+
+### ✅ INCLUDED in Phase 0:
+- **Faction:** Golden Concordat ONLY
+- **Units:** Servo (worker), Volt (ranged), Guard (tank)
+- **Building:** Barracks (trains units)
+- **Economy:** Solaris ONLY (no Quartz, no Overcharge)
+- **Theme:** Aetherpunk tech/clockwork - NOT fantasy magic
+
+### ❌ NOT in Phase 0:
+- Heroes, RPG elements, abilities
+- Magic, spells, enchantments
+- Crystal/Biomass/Aether resources (OLD - removed)
+- Multiple factions
+- Quartz resource
+- Day/night cycles
+- Upkeep systems
 
 ---
 
 ## 1. EXECUTIVE SUMMARY
 
-Aether Renaissance is a real-time strategy game inspired by Warcraft 3, featuring:
-- Three-tier resource system (Crystal, Biomass, Aether)
-- Hero-centric gameplay with RPG elements
-- Strategic base building and army management
-- Day/Night cycle affecting gameplay
-- Upkeep system balancing army sizes
+Aether Renaissance Phase 0 is a minimal Unity RTS prototype focusing on:
 
-**Target Platform:** PC (Windows, Linux, macOS)
-**Engine:** Unity/Godot (TBD)
+- **Single resource economy** (Solaris only)
+- **Unit-centric RTS gameplay** (NO heroes, NO magic)
+- **3 basic units + 1 building** (Servo/Volt/Guard + Barracks)
+- **Aetherpunk aesthetic** (tech/clockwork/brass - NOT fantasy)
+- **Auto-bootstrap** (press Play → game runs)
+
+**Target Platform:** PC (Windows, Linux, macOS)  
+**Engine:** Unity 2022.3 LTS  
 **Target Audience:** RTS enthusiasts, ages 16+
 
 ---
@@ -24,262 +49,245 @@ Aether Renaissance is a real-time strategy game inspired by Warcraft 3, featurin
 
 ### 2.1 Resource System
 
-#### Primary Resources
-1. **Crystal** (Кристалл)
-   - Basic resource, equivalent to Gold in WC3
-   - Gathered from Crystal Mines
-   - Used for: Basic units, structures, upgrades
-   - Starting amount: 500
-   - Gather rate: 10 Crystal/trip
+#### Solaris (Солярис)
+- **Role:** Basic currency for everything in Phase 0
+- **Gathering:** Servos gather from Solaris Deposits (placeholder cubes)
+- **Uses:** Train units, build Barracks
+- **Starting amount:** 500
+- **Gather rate:** 10 Solaris/trip
+- **No caps** in Phase 0
 
-2. **Biomass** (Биомасса)
-   - Secondary resource, equivalent to Lumber in WC3
-   - Gathered from Biomass Extractors
-   - Used for: Advanced units, upgrades, special buildings
-   - Starting amount: 150
-   - Gather rate: 5 Biomass/trip
-
-3. **Aether** (Эфир)
-   - Tertiary resource for hero items and powerful units
-   - Limited availability on map
-   - Gathered from Aether Wells (neutral structures)
-   - Used for: Hero items, ultimate abilities, special units
-   - Starting amount: 0
-   - Gather rate: 2-3 Aether/trip
-
-### 2.2 Hero System
-
-#### Hero Mechanics
-- **Experience:** Heroes gain XP from kills and quests
-- **Level Cap:** Level 10
-- **Attributes:** Strength, Agility, Intelligence
-- **Abilities:** 4 active abilities + 1 ultimate (unlocks at level 6)
-- **Talents:** Unlock at levels 3, 5, 7, 9
-- **Inventory:** 6 item slots
-
-#### Hero Progression
-- Level 1: Base stats, 1 ability point
-- Level 2-5: +1 ability point per level
-- Level 6: Ultimate ability unlocked
-- Level 7-10: +1 ability point per level
-
-### 2.3 Unit System
-
-#### Unit Categories
-1. **Workers** - Resource gathering, building construction
-2. **Basic Units** - Cost: Crystal only
-3. **Advanced Units** - Cost: Crystal + Biomass
-4. **Elite Units** - Cost: Crystal + Biomass + Aether
-5. **Heroes** - Special recruitment requirements
-
-#### Supply/Upkeep System
-- **No Supply:** 0-40 units = 100% resource income
-- **Low Upkeep:** 41-70 units = 70% resource income
-- **High Upkeep:** 71+ units = 40% resource income
-
-### 2.4 Building System
-
-#### Core Buildings
-- **Main Structure** (Главное здание)
-  - HP: 2500
-  - Produces workers
-  - Stores resources
-  - Drop-off point
-
-- **Barracks** (Казармы)
-  - Produces basic military units
-  - Unlocks unit upgrades
-
-- **Workshop** (Мастерская)
-  - Produces advanced units
-  - Requires Biomass
-
-- **Hero Altar** (Алтарь Героев)
-  - Recruits heroes
-  - Revives fallen heroes
-
-### 2.5 Combat System
-
-#### Damage Types
-- **Physical Damage:** Standard melee/ranged attacks
-- **Magic Damage:** Spell damage, ignores armor
-- **Pure Damage:** Ignores all resistances
-
-#### Armor Types
-- **Light Armor:** +bonus vs magic, vulnerable to pierce
-- **Medium Armor:** Balanced defense
-- **Heavy Armor:** High physical defense, weak to magic
+#### Phase 1+ (NOT Phase 0):
+- Quartz (tech resource)
+- Overcharge (advanced mechanics)
 
 ---
 
-## 3. MAP & ENVIRONMENT
+### 2.2 Units (Phase 0)
 
-### 3.1 Fog of War
-- **Unexplored:** Black fog
-- **Explored:** Gray fog (terrain visible, units hidden)
-- **Vision:** Full visibility around your units/buildings
+#### Unit_Servo (Worker)
+- **Role:** Gather Solaris, build Barracks
+- **Stats:**
+  - HP: 50
+  - Speed: 5
+  - No combat
+- **Cost:** 50 Solaris
+- **Abilities:** Gather, Build
+- **Visual:** Placeholder cube/capsule
 
-### 3.2 Day/Night Cycle
-- **Day:** 8 minutes (480 seconds)
-- **Night:** 4 minutes (240 seconds)
-- **Effects:**
-  - Night: -40% vision range
-  - Night: Stealth units gain +25% movement speed
-  - Day: Markets offer better exchange rates
+#### Unit_Volt (Ranged)
+- **Role:** Ranged attacker
+- **Stats:**
+  - HP: 80
+  - Speed: 4.5
+  - Damage: 15
+  - Range: 8
+  - Attack speed: 1.5s
+- **Cost:** 100 Solaris
+- **Visual:** Placeholder capsule
 
-### 3.3 Neutral Elements
-
-#### Creep Camps
-- Small: 1-3 units, rewards: 50-100 XP, small item
-- Medium: 3-5 units, rewards: 150-300 XP, medium item
-- Large: 5-8 units, rewards: 400-600 XP, rare item
-
-#### Aether Wells
-- Neutral structures providing Aether
-- Can be captured and controlled
-- 3 Aether per gathering trip
-
----
-
-## 4. VICTORY CONDITIONS
-
-### Standard Victory
-1. **Elimination:** Destroy all enemy main structures
-2. **Domination:** Control 75%+ of map objectives for 5 minutes
-3. **Economic:** Accumulate 10,000 Crystal + 5,000 Biomass + 500 Aether
-
-### Alternative Modes (Future)
-- King of the Hill
-- Capture the Flag
-- Survival/Defense
-- Campaign missions
+#### Unit_Guard (Tank)
+- **Role:** Melee tank
+- **Stats:**
+  - HP: 200
+  - Speed: 3
+  - Damage: 25
+  - Range: 1.5 (melee)
+  - Attack speed: 2s
+- **Cost:** 150 Solaris
+- **Visual:** Placeholder cube
 
 ---
 
-## 5. UI/UX REQUIREMENTS
+### 2.3 Buildings (Phase 0)
 
-### Core UI Elements
-- **Resource Bar:** Display Crystal, Biomass, Aether, Supply
-- **Mini-map:** Show explored terrain, units, objectives
-- **Unit Panel:** Selected unit stats, abilities, commands
-- **Hero Panel:** Quick access to hero abilities and inventory
-- **Building Queue:** Show production progress
+#### Building_Barracks
+- **Role:** Train units (Servo/Volt/Guard)
+- **Stats:**
+  - HP: 500
+  - Build time: 5s
+- **Cost:** 200 Solaris
+- **Train queue:** Up to 5 units
+- **Visual:** Placeholder large cube
 
-### Control Groups
-- Support up to 12 control groups (1-9, 0, -, =)
-- Double-tap to center camera on group
+---
+
+### 2.4 Faction (Phase 0)
+
+#### Golden Concordat (Золотой Конкордат)
+- **Theme:** Clockwork empire, brass & gold aesthetic
+- **Philosophy:** Order through automation
+- **Tech focus:** Mechanical precision, solar power
+- **Units:** Servo/Volt/Guard
+- **Color scheme:** Gold/brass/bronze
+
+**Phase 1+:** Other factions (Crimson Dominion, etc.)
+
+---
+
+## 3. TECHNICAL ARCHITECTURE
+
+### 3.1 Project Structure
+
+```
+Assets/
+├── Scripts/
+│   ├── Units/
+│   │   ├── Unit_Servo.cs
+│   │   ├── Unit_Volt.cs
+│   │   └── Unit_Guard.cs
+│   ├── Buildings/
+│   │   └── Building_Barracks.cs
+│   ├── Systems/
+│   │   ├── ResourceSystem.cs
+│   │   ├── SelectionManager.cs
+│   │   └── CameraController.cs
+│   └── Bootstrap/
+│       └── GameBootstrap.cs
+├── Prefabs/
+│   ├── Units/
+│   └── Buildings/
+├── Scenes/
+│   └── TestScene.unity
+└── UI/
+    └── ResourceDisplay.uxml
+```
+
+### 3.2 Core Systems
+
+#### ResourceSystem.cs
+- Track Solaris amount
+- Validate costs
+- Update UI
+
+#### SelectionManager.cs
+- Click to select units
+- Box selection
+- Right-click to move/attack
+
+#### CameraController.cs
+- WASD movement
+- Mouse edge scrolling
+- Zoom with scroll wheel
+
+#### GameBootstrap.cs
+- Auto-initialize on Play
+- Spawn starting Servos
+- Set initial Solaris
+
+---
+
+## 4. GAMEPLAY FLOW (Phase 0)
+
+### Core Loop:
+1. Press Play → Game auto-starts
+2. Select starting Servos
+3. Gather Solaris from deposits
+4. Build Barracks
+5. Train Volt/Guard units
+6. Test combat
+
+### Victory Condition (Phase 0):
+No formal win/loss - sandbox testing mode
+
+---
+
+## 5. UI/UX (Phase 0)
+
+### HUD Elements:
+- Top-left: Solaris counter
+- Bottom-center: Unit selection info
+- Bottom-right: Build/train buttons (when applicable)
+
+### Controls:
+- **Left-click:** Select unit
+- **Right-click:** Move/attack
+- **Drag:** Box selection
+- **WASD:** Camera movement
+- **Mouse edge:** Scroll camera
+- **Scroll wheel:** Zoom
 
 ---
 
 ## 6. TECHNICAL REQUIREMENTS
 
-### Performance Targets
-- **Frame Rate:** 60 FPS minimum on medium settings
-- **Unit Count:** Support 200+ units simultaneously
-- **Map Size:** Up to 256x256 tiles
-- **Pathfinding:** A* or Flow Field algorithm
+### Minimum:
+- **OS:** Windows 10/11, macOS 10.15+, or Linux
+- **Unity:** 2022.3 LTS or newer
+- **RAM:** 8 GB
+- **Storage:** 2 GB free space
+- **GPU:** DirectX 11 compatible
 
-### Network (Multiplayer)
-- P2P or dedicated server architecture
-- Support 2-8 players
-- Replay system
-- Anti-cheat measures
-
----
-
-## 7. DEVELOPMENT ROADMAP
-
-### Phase 1: Core Systems (Months 1-3)
-- [ ] Resource system implementation
-- [ ] Basic unit control and pathfinding
-- [ ] Simple combat system
-- [ ] Map editor prototype
-
-### Phase 2: Advanced Features (Months 4-6)
-- [ ] Hero system with abilities
-- [ ] Building construction system
-- [ ] Day/Night cycle
-- [ ] Fog of War implementation
-
-### Phase 3: Content Creation (Months 7-9)
-- [ ] 3+ playable factions
-- [ ] 20+ unit types
-- [ ] 10+ hero characters
-- [ ] 5+ maps
-
-### Phase 4: Polish & Testing (Months 10-12)
-- [ ] Balance testing
-- [ ] Bug fixing
-- [ ] Performance optimization
-- [ ] Multiplayer testing
+### Recommended:
+- **Unity:** 2022.3 LTS (tested version)
+- **RAM:** 16 GB
+- **GPU:** Dedicated graphics card
 
 ---
 
-## 8. DESIGN CONSTRAINTS
+## 7. DEVELOPMENT PRIORITIES
 
-### Must Have
-- Clear visual feedback for all actions
-- Responsive controls (< 100ms input lag)
-- Readable unit silhouettes
-- Color-blind friendly UI
-- Hotkey customization
+### Phase 0 Milestones:
+1. ✅ Core systems (Resource, Selection, Camera)
+2. ✅ Basic units (Servo/Volt/Guard)
+3. ✅ Barracks building
+4. ✅ Placeholder visuals
+5. ✅ Auto-bootstrap
 
-### Should Have
-- Replay system
-- Spectator mode
-- Custom game lobbies
-- Map editor
-
-### Could Have
-- Campaign mode
-- Cinematics
-- Voice acting
-- Custom unit skins
+### Phase 1 (Future):
+- Quartz resource
+- More units/buildings
+- Combat balance
+- Real 3D models
+- Sound/music
 
 ---
 
-## 9. BALANCE GUIDELINES
+## 8. DESIGN PHILOSOPHY
 
-### Resource Balance
-- 1 Crystal ≈ 2 Biomass ≈ 10 Aether (relative value)
-- Workers pay for themselves in 60 seconds
-- First hero available at 3:00 game time
+### Aetherpunk NOT Fantasy:
+- Tech/clockwork aesthetic (brass, gears, solar power)
+- NO magic spells, enchantments, fantasy elements
+- Industrial revolution meets advanced tech
 
-### Unit Balance
-- Basic units: 30-60 seconds build time
-- Advanced units: 60-90 seconds build time
-- Heroes: 120 seconds recruitment time
-- Average game length: 20-30 minutes
+### Unit-Centric RTS:
+- NO heroes with RPG progression
+- Focus on army composition
+- Traditional RTS mechanics (StarCraft/WC3-style)
 
-### Economy Guardrails
-- Maximum workers: 20 per player
-- Resource cap: 10,000 Crystal, 5,000 Biomass, 1,000 Aether
-- Gathering efficiency: Diminishing returns after 3 workers per source
+### Solaris Economy:
+- Phase 0: Solaris only (simple)
+- Phase 1+: Add Quartz (complexity)
 
 ---
 
-## 10. APPENDICES
+## 9. OUT OF SCOPE (Phase 0)
 
-### A. Reference Games
-- Warcraft 3: Reign of Chaos / The Frozen Throne
-- StarCraft II
-- Age of Empires II
-- Command & Conquer series
-
-### B. Art Style Direction
-- Low-poly aesthetic (similar to WC3)
-- Vibrant, saturated colors
-- Clear unit silhouettes
-- Readable from strategic camera angle
-
-### C. Audio Design
-- Directional sound for combat
-- Distinct unit voice lines
-- Ambient environmental sounds
-- Epic orchestral soundtrack
+❌ Heroes, abilities, magic  
+❌ Multiple factions  
+❌ Quartz resource  
+❌ Day/night cycles  
+❌ Upkeep systems  
+❌ Story/campaign  
+❌ Multiplayer  
+❌ Advanced AI  
+❌ Polished graphics/audio  
 
 ---
 
-**Document Status:** Living Document
-**Next Review:** February 2025
-**Contributors:** bakhteegames-ai team
+## 10. TESTING CHECKLIST
+
+### Phase 0 Must Work:
+- [ ] Press Play → game starts
+- [ ] Select Servo → gather Solaris
+- [ ] Build Barracks
+- [ ] Train Volt → attack enemy
+- [ ] Train Guard → tank damage
+- [ ] UI shows Solaris count
+- [ ] Camera controls work
+
+---
+
+**Document Status:** Phase 0 Complete  
+**Next Update:** After Phase 0 vertical slice completion  
+**Contact:** AetherRenaissance dev team
