@@ -1,174 +1,261 @@
 # Aether Renaissance
 
-A real-time strategy (RTS) game inspired by Warcraft 3, featuring strategic resource management, hero development, and tactical combat.
+> **Phase 0 Vertical Slice** - Unity RTS Prototype
+> 
+> **Status**: 🏗️ Early Development  
+> **Engine**: Unity 2022.3+  
+> **Genre**: Competitive RTS (Aetherpunk)
 
-## 🎮 Overview
+---
 
-Aether Renaissance combines classic RTS mechanics with innovative resource and hero management systems. Players must balance economic development, military strategy, and hero progression to achieve victory.
+## 🎯 Overview
 
-## ✨ Key Features
+**Aether Renaissance** is a competitive RTS inspired by Warcraft 3 and StarCraft, set in an aetherpunk world where technology, clockwork, and cosmic energy replace traditional magic.
 
-### Core Gameplay
+**Current Phase**: Phase 0 Vertical Slice  
+**Goal**: Playable single-faction demo with core RTS mechanics
 
-**Three-Tier Resource System**
-- **Crystal** (Tier 1): Basic resource gathered from mines
-- **Biomass** (Tier 2): Intermediate resource from biological sources
-- **Aether** (Tier 3): Advanced mystical resource
-- Resource conversion system (10:1 ratio between tiers)
-- Dynamic resource gathering and storage management
+---
 
-**Hero Development System**
-- Experience-based leveling with progressive stat increases
-- Talent tree with Combat, Economy, and Magic specializations
-- Equipment system with weapons, armor, and accessories
-- Dynamic stat calculation based on base stats + equipment bonuses
+## ⚙️ Phase 0 Scope
 
-**Unit Control**
-- Traditional RTS unit control with formations
-- Unit creation and army management
-- Tactical abilities based on unit types
+### Golden Concordat (Only Faction)
+- **Theme**: Italian Renaissance + Clockwork Engineering
+- **Style**: Brass, marble, optics, steam-powered mechanisms
+- **Philosophy**: Order through engineering excellence
 
-**Base Building**
-- Strategic placement of structures and defenses
-- Building upgrades and technology progression
+### Units (Phase 0)
+| Unit | Role | HP | Damage | Range | Speed | Cost |
+|------|------|----|----|-------|-------|------|
+| **Servo** | Worker | 50 | - | - | 3.0 | 50 Solaris |
+| **Volt** | Ranged DPS | 70 | 9 | 6.0 | 3.5 | 60 Solaris |
+| **Guard** | Tank Melee | 160 | 13 | 1.6 | 3.0 | 90 Solaris |
 
-### Game Mechanics
+### Buildings (Phase 0)
+- **Barracks**: Trains Volt and Guard units
+- **Depot** (planned): Resource storage and worker spawn
 
-**Resource Management**
-- Automatic resource gathering through collectors
-- Storage capacity limits requiring strategic upgrades
-- Resource costs for units, buildings, and upgrades
+### Economy (Phase 0)
+- **Solaris**: Main resource (mining, training, building)
+- **Starting amount**: 500 Solaris
+- **Harvest rate**: +5 Solaris/second per worker
+- **Worker carry capacity**: 20 Solaris
 
-**Hero Progression**
-- Gain experience through combat and quests
-- Unlock and upgrade talents with talent points
-- Equip items to enhance hero capabilities
-- Level-based stat scaling
+> **Note**: Quartz and Overcharge mechanics are planned for Phase 1+
 
-**Combat System**
-- Damage calculation with attack and defense stats
-- Unit health and healing mechanics
-- Tactical positioning and formations
+---
 
-## 🚀 Getting Started
+## 🚀 Quick Start
 
-### Prerequisites
-
-- .NET 6.0 SDK or later
-- C# development environment (Visual Studio, VS Code, or Rider)
+### Requirements
+- Unity 2022.3 LTS or newer
+- Git
 
 ### Installation
 
-1. Clone the repository:
 ```bash
+# Clone repository
 git clone https://github.com/bakhteegames-ai/AetherRenaissance.git
 cd AetherRenaissance
+
+# Open in Unity
+# File → Open Project → Select AetherRenaissance folder
+
+# Press Play ▶️
 ```
 
-2. Build the project:
-```bash
-dotnet build
-```
+### First Play
+1. **Open Unity** and load the project
+2. **Open Scene**: `Assets/Scenes/Phase0_TestMap.unity`
+3. **Press Play** ▶️
+4. **Controls**:
+   - `LMB`: Select units
+   - `Drag`: Marquee selection
+   - `RMB`: Move/Attack
+   - `WASD` or `Edge Scroll`: Camera movement
+   - `Mouse Wheel`: Zoom
+   - `Ctrl+1-9`: Create control groups
+   - `1-9`: Select control groups
 
-3. Run the demo:
-```bash
-dotnet run --project .
-```
+---
+
+## 📋 Game Design (MASTER CANON)
+
+### Core Pillars
+1. **Decisions > Reactions**: Strategic thinking over APM
+2. **High Lethality**: Combat is fast and decisive
+3. **Clear Counters**: Rock-paper-scissors unit relationships
+4. **Macro > Micro**: Economy and positioning matter most
+
+### Aetherpunk Theme
+- ❌ **NO traditional magic** (no wizards, no mana, no spells)
+- ✅ **Tech-based powers**: Clockwork, optics, steam, electricity
+- ✅ **Cosmic energy**: Aether as scientific phenomenon, not mysticism
+- ✅ **Da Vinci engineering**: Brass, gears, Renaissance aesthetics
+
+### Factions (Full Game)
+1. **Golden Concordat** (Order/Humans) - Phase 0 ✅
+2. **Ferrum** (Industry/Dieselpunk) - Planned
+3. **Viridian Coil** (Biotech/Growth) - Planned
+4. **Entropy** (Void/Cosmic Horror) - Planned
+
+---
 
 ## 📁 Project Structure
 
 ```
 AetherRenaissance/
-├── src/
-│   ├── Systems/
-│   │   ├── UnitSystem.cs       # Hero and unit management
-│   │   └── ResourceSystem.cs   # Three-tier resource economy
-│   └── Program.cs              # Game demo and examples
+├── Assets/
+│   ├── Scripts/
+│   │   ├── Units/
+│   │   │   ├── Unit_Servo.cs
+│   │   │   ├── Unit_Volt.cs
+│   │   │   └── Unit_Guard.cs
+│   │   ├── Buildings/
+│   │   │   └── Building_Barracks.cs
+│   │   ├── Systems/
+│   │   │   ├── ResourceSystem.cs
+│   │   │   └── SelectionManager.cs
+│   │   └── Bootstrap/
+│   │       └── GameBootstrap.cs
+│   ├── Prefabs/
+│   ├── Scenes/
+│   └── UI/
+├── ProjectSettings/
+├── Packages/
 ├── docs/
-│   └── TDD.md                  # Technical Design Document
-├── AetherRenaissance.csproj    # Project configuration
-└── README.md                   # This file
+│   └── Aether_Renaissance_Master_Context_v2.txt
+└── README.md (this file)
 ```
-
-## 🎯 Game Systems
-
-### Resource System
-
-The resource system manages the three-tier economy:
-
-```csharp
-var resourceSystem = new ResourceSystem();
-resourceSystem.AddResource(ResourceType.Crystal, 100);
-resourceSystem.AddGatherer("Crystal Mine", ResourceType.Crystal, 10);
-resourceSystem.Update(); // Simulate gathering
-resourceSystem.ConvertResources(ResourceType.Crystal, ResourceType.Biomass, 5);
-```
-
-### Hero System
-
-Heroes are the core of your strategy:
-
-```csharp
-var hero = unitSystem.CreateHero("Commander");
-hero.AddExperience(120); // Gain levels
-
-var sword = new Equipment("Legendary Sword", EquipmentSlot.Weapon, attack: 25);
-hero.EquipItem(sword);
-
-var talent = new Talent("Blade Master", TalentType.Combat, "Increases damage", 3);
-hero.AddTalent(talent);
-hero.UpgradeTalent("Blade Master");
-```
-
-## 🎬 Demo Examples
-
-The program includes three comprehensive demos:
-
-1. **Resource System Demo**: Showcases resource gathering, conversion, and spending
-2. **Hero System Demo**: Demonstrates hero progression, equipment, and talents
-3. **Integrated Gameplay**: Simulates a complete game scenario from early to late game
-
-Run the program to see all systems in action!
-
-## 🛠️ Technical Stack
-
-- **Engine**: C# / .NET 6.0
-- **Architecture**: Object-oriented with modular systems
-- **Design**: Inspired by Warcraft 3 and modern RTS games
-
-## 📋 Roadmap
-
-- [x] Core resource system with three-tier economy
-- [x] Hero development with experience and leveling
-- [x] Equipment and talent systems
-- [x] Unit creation and management
-- [ ] Building system with construction and upgrades
-- [ ] Combat system with tactical abilities
-- [ ] Map system with fog of war
-- [ ] Multiplayer support
-- [ ] Campaign mode
-- [ ] Visual UI and graphics engine integration
-
-## 🤝 Contributing
-
-Contributions are welcome! This is an active development project.
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- Inspired by Warcraft 3's game mechanics
-- Based on classic RTS design principles
-- Created as a demonstration of RTS game architecture
-
-## 📞 Contact
-
-For questions or feedback, please open an issue on GitHub.
 
 ---
 
-**Status**: 🏗️ In Active Development
+## 🎮 Controls
 
-The game currently features working resource and hero systems with comprehensive demos. Combat and building systems are planned for upcoming releases.
+### Unit Control (Warcraft 3 Style)
+- **Select**: Left Click (LMB)
+- **Multi-Select**: Drag box
+- **Add to Selection**: Shift + LMB
+- **Move**: Right Click (RMB) on ground
+- **Attack**: RMB on enemy unit
+- **Stop**: S key
+- **Hold Position**: H key
+
+### Camera
+- **Pan**: WASD or Edge Scroll
+- **Zoom**: Mouse Wheel
+- **Rotate**: Middle Mouse Button (planned)
+
+### Groups
+- **Create Group**: Ctrl + [1-9]
+- **Select Group**: [1-9]
+- **Add to Group**: Shift + [1-9]
+- **Center on Group**: Double-tap [1-9]
+
+---
+
+## 🛠️ Tech Stack
+
+- **Engine**: Unity 2022.3 LTS
+- **Language**: C#
+- **Navigation**: Unity NavMesh
+- **Input**: New Input System (planned)
+- **Architecture**: ECS-inspired (modular systems)
+
+---
+
+## 📖 Development Phases
+
+### ✅ Phase 0: Vertical Slice (Current)
+- [x] Golden Concordat faction
+- [x] 3 unit types (Servo, Volt, Guard)
+- [x] Barracks building
+- [x] Solaris economy
+- [ ] Selection and movement
+- [ ] Basic combat
+- [ ] Auto-bootstrap on Play
+
+### 🔜 Phase 1: Core Gameplay
+- [ ] All Golden Concordat units (12 slots)
+- [ ] Quartz resource + Overcharge
+- [ ] Damage types (Kinetic, Aether, AP, Siege)
+- [ ] Building construction
+- [ ] Fog of War
+
+### 🔮 Phase 2: Multi-Faction
+- [ ] Ferrum faction
+- [ ] Faction-specific mechanics
+- [ ] Map variety
+- [ ] AI opponent
+
+### 🚀 Phase 3: Competitive
+- [ ] All 4 factions
+- [ ] Multiplayer
+- [ ] Balance patches
+- [ ] Ranked mode
+
+---
+
+## 🧠 Design Philosophy
+
+This project follows **MASTER CANON v2.1** - a comprehensive design document that ensures:
+
+1. **Consistency**: All features align with core vision
+2. **AI-Friendly**: Clear rules for AI-assisted development
+3. **No Scope Creep**: Phase 0 scope is strictly enforced
+4. **Tech Over Magic**: Aetherpunk aesthetic maintained
+
+See `docs/Aether_Renaissance_Master_Context_v2.txt` for full design document.
+
+---
+
+## 🤝 Contributing
+
+This is an active development project. If you want to contribute:
+
+1. Read **MASTER CANON** in `docs/`
+2. Check open Issues for current tasks
+3. Follow Phase 0 scope strictly
+4. All code must follow naming convention:
+   - `Unit_[Name].cs` for units
+   - `Building_[Name].cs` for buildings
+   - No generic/abstract class names
+
+---
+
+## 📄 License
+
+MIT License - See [LICENSE](LICENSE) file
+
+---
+
+## 📞 Links
+
+- **Repository**: https://github.com/bakhteegames-ai/AetherRenaissance
+- **Issues**: [Report bugs or request features](https://github.com/bakhteegames-ai/AetherRenaissance/issues)
+- **Master Canon**: See `docs/Aether_Renaissance_Master_Context_v2.txt`
+
+---
+
+## ⚠️ Important Notes
+
+### For AI Assistants
+If you're an AI helping with this project:
+- **ALWAYS read MASTER CANON first**
+- **Phase 0 scope is STRICT** - no heroes, no magic, no Quartz
+- **Use proper naming**: `Unit_Volt`, not `RangedUnit` or `VoltUnit`
+- **Aetherpunk only**: No fantasy elements
+- **Auto-bootstrap required**: Game must run on Play button
+
+### For Developers
+This repository is structured for:
+- ✅ Unity development (primary)
+- ❌ NOT .NET standalone (legacy code archived)
+
+Legacy .NET prototype has been moved to `archive/dotnet-prototype/`
+
+---
+
+**Last Updated**: February 5, 2026  
+**Version**: Phase 0 - Vertical Slice  
+**Status**: 🏗️ Active Development
